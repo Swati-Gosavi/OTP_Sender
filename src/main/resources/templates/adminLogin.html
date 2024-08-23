@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login Page</title>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://images.pexels.com/photos/409696/pexels-photo-409696.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Increased transparency */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(2px); /* Increased blur effect */
+}
+
+label {
+    color: #000; /* Black text */
+    font-size: 1.1em;
+    font-weight: bold; /* Bold text */
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+}
+
+input[type=text], input[type=password] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    background-color: #28a745; /* Green shade */
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green shade on hover */
+}
+
+.cancelbtn {
+    background-color: #ff8f00; /* Changed to orange shade */
+    color: #fff; /* White text */
+    padding: 10px 18px; /* Smaller padding for smaller button */
+    border-radius: 5px;
+    font-size: 0.9em; /* Slightly smaller font size */
+    cursor: pointer;
+    border: none;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+    width: auto; /* Button width adjusted to content */
+}
+
+.cancelbtn:hover {
+    background-color: #ec971f; /* Darker orange shade on hover */
+}
+
+.container {
+    padding: 10px 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+    <div>
+        <div class="title">
+            <h1>Welcome</h1>
+            <h3>Admin Login</h3>
+        </div>
+        <form th:action="@{/loginsts}" method="post">
+            <div class="container">
+                <label>Username :</label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                
+                <label>Password :</label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                
+                <button type="submit">Login</button>
+                <button type="reset" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
